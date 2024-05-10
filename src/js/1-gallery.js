@@ -96,14 +96,12 @@ function handleClick(event) {
     return;
   }
 
-  const instance = new SimpleLightbox('.gallery a', {
+  const lightbox = new SimpleLightbox('.gallery a', {
     overlayOpacity: 0.8,
     captionsData: 'alt',
     captionDelay: 250,
-    docClose: true,
     className: 'modal-image',
-    className: 'text-center',
   });
 
-  show.simplelightbox();
+  show.simplelightbox(lightbox);
 }
