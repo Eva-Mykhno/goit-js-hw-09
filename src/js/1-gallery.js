@@ -70,7 +70,6 @@ const images = [
 const gallery = document.querySelector('.gallery');
 
 gallery.insertAdjacentHTML('afterbegin', createImagesGallery(images));
-gallery.addEventListener('click', handleClick);
 
 function createImagesGallery(images) {
   return images
@@ -90,18 +89,9 @@ function createImagesGallery(images) {
     .join('');
 }
 
-function handleClick(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
-
-  const lightbox = new SimpleLightbox('.gallery a', {
-    overlayOpacity: 0.8,
-    captionsData: 'alt',
-    captionDelay: 250,
-    className: 'modal-image',
-  });
-
-  show.simplelightbox(lightbox);
-}
+const lightbox = new SimpleLightbox('.gallery a', {
+  overlayOpacity: 0.8,
+  captionsData: 'alt',
+  captionDelay: 250,
+  className: 'modal-image',
+});
